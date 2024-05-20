@@ -182,7 +182,10 @@ if __name__ == '__main__':
             train_dict[cfg.train.mode](loggers, loaders, model, optimizer,
                                        scheduler)
     # Aggregate results from different seeds
-    agg_runs(cfg.out_dir, cfg.metric_best)
+    try:
+        agg_runs(cfg.out_dir, cfg.metric_best)
+    except Exception as e:
+        pass
     # When being launched in batch mode, mark a yaml as done
     if args.mark_done:
         os.rename(args.cfg_file, '{}_done'.format(args.cfg_file))
