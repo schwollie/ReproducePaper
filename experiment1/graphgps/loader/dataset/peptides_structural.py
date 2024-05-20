@@ -3,6 +3,10 @@ import os.path as osp
 import pickle
 import shutil
 
+import warnings
+warnings.simplefilter(action='ignore', category=FutureWarning)
+
+
 import pandas as pd
 import torch
 from ogb.utils import smiles2graph

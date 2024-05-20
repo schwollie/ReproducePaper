@@ -1,0 +1,12 @@
+[*] Run ID 0: seed=0, split_index=0
+    Starting now: 2024-05-20 12:25:19.048053
+[*] Loaded dataset 'peptides-functional' from 'OGB':
+  Data(edge_index=[2, 4773974], edge_attr=[4773974, 3], x=[2344859, 9], y=[15535, 10])
+  undirected: True
+  num graphs: 15535
+  avg num_nodes/graph: 150
+  num node features: 9
+  num edge features: 3
+  num classes: 10
+Precomputing Positional Encoding statistics: ['LapPE'] for all graphs...
+  ...estimated to be undirected: True
