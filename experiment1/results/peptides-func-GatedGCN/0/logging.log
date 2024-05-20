@@ -1,5 +1,5 @@
 [*] Run ID 0: seed=0, split_index=0
-    Starting now: 2024-05-20 12:24:07.775111
+    Starting now: 2024-05-20 12:59:24.227417
 [*] Loaded dataset 'peptides-functional' from 'OGB':
   Data(edge_index=[2, 4773974], edge_attr=[4773974, 3], x=[2344859, 9], y=[15535, 10])
   undirected: True
