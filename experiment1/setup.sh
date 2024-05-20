@@ -1,4 +1,9 @@
 #!/bin/bash
+
+#
+# run with "bash -i ./setup.sh"
+#
+
 conda create -n paper
 conda activate paper
 
