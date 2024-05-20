@@ -1,5 +1,5 @@
 [*] Run ID 0: seed=0, split_index=0
-    Starting now: 2024-05-20 12:34:38.978786
+    Starting now: 2024-05-20 19:02:24.959807
 [*] Loaded dataset 'peptides-structural' from 'OGB':
   Data(edge_index=[2, 4773974], edge_attr=[4773974, 3], x=[2344859, 9], y=[15535, 11])
   undirected: True
@@ -163,28 +163,19 @@ name_tag:
 num_threads: 6
 num_workers: 0
 optim:
-  base_lr: 0.01
+  base_lr: 0.001
   batch_accumulation: 1
   clip_grad_norm: False
   lr_decay: 0.1
-  max_epoch: 200
-  min_lr: 0.0
+  max_epoch: 500
+  min_lr: 1e-05
   momentum: 0.9
   num_warmup_epochs: 50
-  optimizer: adam
-  reduce_factor: 0.1
-  schedule_patience: 10
-  scheduler: cos
-  steps: [30, 60, 90]
-  weight_decay: 0.0005
-optimizer_config:
-  base_lr: 0.001
-  max_epoch: 500
-  min_lr: 1e-5
   optimizer: adamW
   reduce_factor: 0.5
   schedule_patience: 20
   scheduler: reduce_on_plateau
+  steps: [30, 60, 90]
   weight_decay: 0.0
 out_dir: results/peptides-struct-GatedGCN
 posenc_ElstaticSE:
@@ -315,3 +306,33 @@ wandb:
   use: False
 Num parameters: 509645
 Start from epoch 0
+train: {'epoch': 0, 'time_epoch': 12.28657, 'eta': 6131.00037, 'eta_hours': 1.70306, 'loss': 0.49870226, 'lr': nan, 'params': 509645, 'time_iter': 0.14455, 'mae': 0.4987, 'r2': 0.28902, 'spearmanr': 0.6405, 'pearson': -1.0, 'mse': 0.71881, 'rmse': 0.84329, 'trivial_loss': 0.6771085515836229}
+...computing epoch stats took: 0.08s
+val: {'epoch': 0, 'time_epoch': 1.17332, 'loss': 0.52971089, 'lr': 0, 'params': 509645, 'time_iter': 0.06175, 'mae': 0.52971, 'r2': 0.33314, 'spearmanr': 0.69873, 'pearson': -1.0, 'mse': 0.62533, 'rmse': 0.78351}
+...computing epoch stats took: 0.03s
+test: {'epoch': 0, 'time_epoch': 1.15998, 'loss': 0.53868325, 'lr': 0, 'params': 509645, 'time_iter': 0.06105, 'mae': 0.53868, 'r2': 0.34088, 'spearmanr': 0.70664, 'pearson': -1.0, 'mse': 0.66738, 'rmse': 0.8092}
+...computing epoch stats took: 0.02s
+> Epoch 0: took 14.8s (avg 14.8s) | Best so far: epoch 0	train_loss: 0.4987 train_mae: 0.4987	val_loss: 0.5297 val_mae: 0.5297	test_loss: 0.5387 test_mae: 0.5387
+train: {'epoch': 1, 'time_epoch': 11.1712, 'eta': 5840.98606, 'eta_hours': 1.6225, 'loss': 0.43767853, 'lr': nan, 'params': 509645, 'time_iter': 0.13143, 'mae': 0.43768, 'r2': 0.4362, 'spearmanr': 0.73935, 'pearson': -1.0, 'mse': 0.56999, 'rmse': 0.74719, 'trivial_loss': 0.6769316671447856}
+...computing epoch stats took: 0.08s
+val: {'epoch': 1, 'time_epoch': 0.95928, 'loss': 0.43110428, 'lr': 0, 'params': 509645, 'time_iter': 0.05049, 'mae': 0.4311, 'r2': 0.43836, 'spearmanr': 0.80405, 'pearson': -1.0, 'mse': 0.52309, 'rmse': 0.7148}
+...computing epoch stats took: 0.02s
+test: {'epoch': 1, 'time_epoch': 0.97365, 'loss': 0.44052395, 'lr': 0, 'params': 509645, 'time_iter': 0.05124, 'mae': 0.44052, 'r2': 0.43055, 'spearmanr': 0.80813, 'pearson': -1.0, 'mse': 0.5782, 'rmse': 0.7505}
+...computing epoch stats took: 0.02s
+> Epoch 1: took 13.2s (avg 14.0s) | Best so far: epoch 1	train_loss: 0.4377 train_mae: 0.4377	val_loss: 0.4311 val_mae: 0.4311	test_loss: 0.4405 test_mae: 0.4405
+train: {'epoch': 2, 'time_epoch': 11.77275, 'eta': 5836.52345, 'eta_hours': 1.62126, 'loss': 0.42834673, 'lr': nan, 'params': 509645, 'time_iter': 0.1385, 'mae': 0.42835, 'r2': 0.44666, 'spearmanr': 0.76203, 'pearson': -1.0, 'mse': 0.55942, 'rmse': 0.7397, 'trivial_loss': 0.6768484810101869}
+...computing epoch stats took: 0.08s
+val: {'epoch': 2, 'time_epoch': 1.02941, 'loss': 0.41203649, 'lr': 0, 'params': 509645, 'time_iter': 0.05418, 'mae': 0.41204, 'r2': 0.45764, 'spearmanr': 0.81063, 'pearson': -1.0, 'mse': 0.50648, 'rmse': 0.70402}
+...computing epoch stats took: 0.02s
+test: {'epoch': 2, 'time_epoch': 1.04158, 'loss': 0.42492077, 'lr': 0, 'params': 509645, 'time_iter': 0.05482, 'mae': 0.42492, 'r2': 0.44479, 'spearmanr': 0.81236, 'pearson': -1.0, 'mse': 0.56326, 'rmse': 0.7416}
+...computing epoch stats took: 0.02s
+> Epoch 2: took 14.0s (avg 14.0s) | Best so far: epoch 2	train_loss: 0.4283 train_mae: 0.4284	val_loss: 0.4120 val_mae: 0.4120	test_loss: 0.4249 test_mae: 0.4249
+train: {'epoch': 3, 'time_epoch': 11.85185, 'eta': 5838.21489, 'eta_hours': 1.62173, 'loss': 0.4176332, 'lr': nan, 'params': 509645, 'time_iter': 0.13943, 'mae': 0.41763, 'r2': 0.46411, 'spearmanr': 0.78283, 'pearson': -1.0, 'mse': 0.54181, 'rmse': 0.72775, 'trivial_loss': 0.6771386268605285}
+val: {'epoch': 3, 'time_epoch': 1.02956, 'loss': 0.40078523, 'lr': 0, 'params': 509645, 'time_iter': 0.05419, 'mae': 0.40079, 'r2': 0.49606, 'spearmanr': 0.80036, 'pearson': -1.0, 'mse': 0.46969, 'rmse': 0.67823}
+test: {'epoch': 3, 'time_epoch': 1.04043, 'loss': 0.41640375, 'lr': 0, 'params': 509645, 'time_iter': 0.05476, 'mae': 0.4164, 'r2': 0.4796, 'spearmanr': 0.79725, 'pearson': -1.0, 'mse': 0.52832, 'rmse': 0.71851}
+> Epoch 3: took 14.0s (avg 14.0s) | Best so far: epoch 3	train_loss: 0.4176 train_mae: 0.4176	val_loss: 0.4008 val_mae: 0.4008	test_loss: 0.4164 test_mae: 0.4164
+train: {'epoch': 4, 'time_epoch': 11.86513, 'eta': 5835.80309, 'eta_hours': 1.62106, 'loss': 0.41722181, 'lr': nan, 'params': 509645, 'time_iter': 0.13959, 'mae': 0.41722, 'r2': 0.4663, 'spearmanr': 0.78436, 'pearson': -1.0, 'mse': 0.53959, 'rmse': 0.72622, 'trivial_loss': 0.6771561055703972}
+val: {'epoch': 4, 'time_epoch': 1.02981, 'loss': 0.40517073, 'lr': 0, 'params': 509645, 'time_iter': 0.0542, 'mae': 0.40517, 'r2': 0.49873, 'spearmanr': 0.82223, 'pearson': -1.0, 'mse': 0.46736, 'rmse': 0.67616}
+test: {'epoch': 4, 'time_epoch': 1.04348, 'loss': 0.41970151, 'lr': 0, 'params': 509645, 'time_iter': 0.05492, 'mae': 0.4197, 'r2': 0.48118, 'spearmanr': 0.82088, 'pearson': -1.0, 'mse': 0.52669, 'rmse': 0.71723}
+> Epoch 4: took 14.1s (avg 14.0s) | Best so far: epoch 3	train_loss: 0.4176 train_mae: 0.4176	val_loss: 0.4008 val_mae: 0.4008	test_loss: 0.4164 test_mae: 0.4164
+train: {'epoch': 5, 'time_epoch': 11.85796, 'eta': 5829.64973, 'eta_hours': 1.61935, 'loss': 0.41530118, 'lr': nan, 'params': 509645, 'time_iter': 0.13951, 'mae': 0.4153, 'r2': 0.47395, 'spearmanr': 0.77998, 'pearson': -1.0, 'mse': 0.53187, 'rmse': 0.72066, 'trivial_loss': 0.6765840815432123}

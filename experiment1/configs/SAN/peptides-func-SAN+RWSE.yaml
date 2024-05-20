@@ -49,7 +49,7 @@ gnn:
   batchnorm: True
   act: relu
   dropout: 0.0
-optimizer_config:
+optim:
   batch_accumulation: 4
   optimizer: adamW
   weight_decay: 0.0

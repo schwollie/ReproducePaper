@@ -30,6 +30,8 @@ from graphgps.finetuning import load_pretrained_model_cfg, \
     init_model_from_pretrained, set_new_cfg_allowed
 from graphgps.logger import create_logger
 
+from graphgps.optimizer.extra_optimizers import ExtendedSchedulerConfig
+
 
 def new_optimizer_config(cfg):
     return OptimizerConfig(optimizer=cfg.optim.optimizer,
@@ -39,9 +41,13 @@ def new_optimizer_config(cfg):
 
 
 def new_scheduler_config(cfg):
-    return SchedulerConfig(scheduler=cfg.optim.scheduler,
-                           steps=cfg.optim.steps, lr_decay=cfg.optim.lr_decay,
-                           max_epoch=cfg.optim.max_epoch)
+    return ExtendedSchedulerConfig(
+        scheduler=cfg.optim.scheduler,
+        steps=cfg.optim.steps, lr_decay=cfg.optim.lr_decay,
+        max_epoch=cfg.optim.max_epoch, reduce_factor=cfg.optim.reduce_factor,
+        schedule_patience=cfg.optim.schedule_patience, min_lr=cfg.optim.min_lr,
+        num_warmup_epochs=cfg.optim.num_warmup_epochs,
+        train_mode=cfg.train.mode, eval_period=cfg.train.eval_period)
 
 
 def custom_set_out_dir(cfg, cfg_fname, name_tag):

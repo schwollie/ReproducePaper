@@ -33,7 +33,7 @@ gnn:
   act: relu
   residual: true
   dropout: 0.0
-optimizer_config:
+optim:
   optimizer: adamW
   weight_decay: 0.0
   base_lr: 0.001

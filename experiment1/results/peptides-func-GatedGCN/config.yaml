@@ -134,7 +134,7 @@ optim:
   - 60
   - 90
   weight_decay: 0.0005
-optimizer_config:
+optim:
   base_lr: 0.001
   max_epoch: 500
   min_lr: 1e-5

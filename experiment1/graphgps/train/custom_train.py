@@ -46,7 +46,7 @@ def train_epoch(logger, loader, model, optimizer, scheduler, batch_accumulation)
                             pred=_pred,
                             loss=loss.detach().cpu().item(),
                             trivial_loss = trivial_loss.detach().cpu().item(),
-                            lr=scheduler.get_last_lr()[0],
+                            lr=float("nan"),
                             time_used=time.time() - time_start,
                             params=cfg.params,
                             dataset_name=cfg.dataset.name)

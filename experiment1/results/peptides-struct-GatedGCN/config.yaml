@@ -117,31 +117,22 @@ name_tag: ''
 num_threads: 6
 num_workers: 0
 optim:
-  base_lr: 0.01
+  base_lr: 0.001
   batch_accumulation: 1
   clip_grad_norm: false
   lr_decay: 0.1
-  max_epoch: 200
-  min_lr: 0.0
+  max_epoch: 500
+  min_lr: 1.0e-05
   momentum: 0.9
   num_warmup_epochs: 50
-  optimizer: adam
-  reduce_factor: 0.1
-  schedule_patience: 10
-  scheduler: cos
-  steps:
-  - 30
-  - 60
-  - 90
-  weight_decay: 0.0005
-optimizer_config:
-  base_lr: 0.001
-  max_epoch: 500
-  min_lr: 1e-5
   optimizer: adamW
   reduce_factor: 0.5
   schedule_patience: 20
   scheduler: reduce_on_plateau
+  steps:
+  - 30
+  - 60
+  - 90
   weight_decay: 0.0
 out_dir: results/peptides-struct-GatedGCN
 posenc_ElstaticSE:
