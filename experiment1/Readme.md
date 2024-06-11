@@ -1,10 +1,10 @@
 # Reproduction of paper 'On the Connection Between MPNN and Graph Transformer'
 
-Read this if you don't want to use the jupyter notebook
+Read this if you don't want to use the jupyter notebook and instead want to run everything within your shell.
 
 ## Installation
 
-To install the required packages check setup.sh and update to your cuda version
+To install the required packages check setup.sh and update packages to your cuda version
 
 ```bash
 chmod +x ./setup.sh

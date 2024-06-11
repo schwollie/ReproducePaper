@@ -45,7 +45,7 @@ class MultiHeadAttentionLayer(nn.Module):
 
         if self.full_graph:
             fake_edge_index = negate_edge_index(batch.edge_index, batch.batch)
-            print(fake_edge_index[0].size())
+            #print(fake_edge_index[0].size())
             src_2 = batch.K_2h[fake_edge_index[0]]  # (num fake edges) x num_heads x out_dim
             dest_2 = batch.Q_2h[fake_edge_index[1]]  # (num fake edges) x num_heads x out_dim
             score_2 = torch.mul(src_2, dest_2)
